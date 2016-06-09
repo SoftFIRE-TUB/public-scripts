@@ -2,7 +2,7 @@
 
 export LC_ALL=C
 
-if [ -z $zabbix_pwd ]; then
+if [[ -z "$zabbix_pwd" ]]; then
   zabbix_pwd=zabbix
 fi
 
