@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export LC_ALL=C
+export DEBIAN_FRONTEND="noninteractive"
 
 if [[ -z "$zabbix_pwd" ]]; then
   zabbix_pwd=zabbix
