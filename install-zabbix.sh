@@ -2,6 +2,15 @@
 
 export LC_ALL=C
 
+if [ -z $zabbix_pwd ]; then
+  zabbix_pwd=zabbix
+fi
+
+if [ -z $mysql_pwd ]; then
+  mysql_pwd=root
+fi
+
+
 echo '# Zabbix Application PPA' >> /etc/apt/sources.list
 echo 'deb http://ppa.launchpad.net/tbfr/zabbix/ubuntu precise main' >> /etc/apt/sources.list
 echo 'deb-src http://ppa.launchpad.net/tbfr/zabbix/ubuntu precise main' >> /etc/apt/sources.list
@@ -47,3 +56,4 @@ sudo service apache2 restart
 
 sed -i -e "s/START=no/START=yes/g" /etc/default/zabbix-server
 sudo service zabbix-server restart
+
