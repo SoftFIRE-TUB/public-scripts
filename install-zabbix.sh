@@ -39,7 +39,7 @@ cd /usr/share/zabbix-server-mysql/
 sudo gunzip *.gz
 
 mysql -u root -proot -e "create user 'zabbix'@'localhost' identified by '$zabbix_pwd';"
-mysql -u root -proot -e "drop database zabbix;create database zabbix;"
+mysql -u root -proot -e "create database zabbix;"
 mysql -u root -proot -e "grant all privileges on zabbix.* to 'zabbix'@'localhost';flush privileges;"
 
 mysql -u zabbix -p$zabbix_pwd zabbix < schema.sql
