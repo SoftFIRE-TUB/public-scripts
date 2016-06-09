@@ -20,11 +20,11 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C407E17D5F76A32B
 sudo apt-get update
 
 # avoid promt of pwd
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password $mysql_pwd'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again $mysql_pwd'
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password $mysql_pwd"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again $mysql_pwd"
 sudo apt-get -y install mysql-server
 
-#sudo apt-get install -y zabbix-server-mysql php5-mysql zabbix-frontend-php
+sudo apt-get install -y zabbix-server-mysql php5-mysql zabbix-frontend-php
 
 echo "" >> /etc/zabbix/zabbix_server.conf
 echo "" >> /etc/zabbix/zabbix_server.conf
