@@ -61,4 +61,6 @@ sudo service apache2 restart
 sed -i -e "s/START=no/START=yes/g" /etc/default/zabbix-server
 sudo service zabbix-server restart
 
-mysql -u zabbix -p$zabbix_pwd zabbix -e "update actions set status = 0 where name like '%Auto discovery%';"
+# mysql -u zabbix -p$zabbix_pwd zabbix -e "update actions set status = 0 where name like '%Auto discovery%';"
+
+python zabbix-set-discovery.py
