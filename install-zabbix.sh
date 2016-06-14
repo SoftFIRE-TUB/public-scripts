@@ -63,4 +63,4 @@ sudo service zabbix-server restart
 
 # mysql -u zabbix -p$zabbix_pwd zabbix -e "update actions set status = 0 where name like '%Auto discovery%';"
 
-python $SCRIPT_PATH/zabbix-set-discovery.py
+python /opt/openbaton/scripts/zabbix-set-discovery.py
