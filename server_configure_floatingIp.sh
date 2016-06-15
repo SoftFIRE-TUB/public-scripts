@@ -7,10 +7,10 @@ fi
 
 if [ $server_int_net_floatingIp ]
 then
-	screen -d -m -S client iperf -c $server_int_net_floatingIp -t 300 -p $port
+	screen -d -m -S client iperf -c $server_int_net_floatingIp -t 36000 -p $port
 elif [ $server_softfire_test_floatingIp ]
 then
-	screen -d -m -S client iperf -c $server_softfire_test_floatingIp -t 300 -p $port
+	screen -d -m -S client iperf -c $server_softfire_test_floatingIp -t 36000 -p $port
 else
-	screen -d -m -S client iperf -c $server_private_floatingIp -t 300 -p $port
+	screen -d -m -S client iperf -c $server_private_floatingIp -t 36000 -p $port
 fi
