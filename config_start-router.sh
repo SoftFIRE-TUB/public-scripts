@@ -2,7 +2,7 @@
 
 export LC_ALL=C
 
-screen -d -m -S router mongos --configdb $config_softfire_test_floatingIp --port $port
+screen -d -m -S router mongos --configdb $config_int_net_floatingIp --port $port
 
 while ! nc -z localhost $port; do
   sleep 0.5 # wait for 1/10 of the second before check again
