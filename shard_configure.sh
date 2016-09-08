@@ -2,6 +2,15 @@
 
 export LC_ALL=C
 
-mongo --port $port --eval  "sh.addShard( '`echo $shard_softfire_internal_floatingIp:$shard_port`' )"
+shard_uri="$shard_softfire_internal_floatingIp:$shard_port"
 
-mongo --port $port --eval  'sh.enableSharding("softfire")'
+echo $shard_uri
+echo "sh.addShard('$shard_uri')" > addShard.js
+
+if [ -z $database ]; then
+       	database=softfire
+fi
+
+echo "sh.enableSharding('$database')" > addShard.js
+
+mongo --port $port < addShard.js
