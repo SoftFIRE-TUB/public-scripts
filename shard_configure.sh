@@ -11,6 +11,6 @@ if [ -z $database ]; then
        	database=softfire
 fi
 
-echo "sh.enableSharding('$database')" > addShard.js
+echo "sh.enableSharding('$database')" >> addShard.js
 
 mongo --port $port < addShard.js
