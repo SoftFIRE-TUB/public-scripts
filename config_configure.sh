@@ -8,7 +8,7 @@ COUNTER=1
 while ! nc -z localhost $port; do
   COUNTER=$[$COUNTER +1]
   sleep 0.5 # wait for 1/10 of the second before check again
-  if [ $COUNTER == 250]; then
+  if [ $COUNTER == 250 ]; then
     echo "mongodb not started"
     exit 99
   fi
