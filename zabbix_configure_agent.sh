@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [[ -z "$zabbix_softfire_test_floatingIp" ]]; then
-  echo "softfire_test_floatingIp is required"
+if [[ -z "$zabbixserver_softfire_internal_floatingIp" ]]; then
+  echo "softfire_internal_floatingIp is required"
   exit 1
 fi
 
-export MONITORING_IP=$zabbix_softfire_test_floatingIp
+export MONITORING_IP=$zabbixserver_softfire_internal_floatingIp
 
 echo "Installing zabbix-agent for server at $MONITORING_IP"
 
