@@ -64,3 +64,5 @@ sudo service zabbix-server restart
 # mysql -u zabbix -p$zabbix_pwd zabbix -e "update actions set status = 0 where name like '%Auto discovery%';"
 
 python /opt/openbaton/scripts/zabbix-set-discovery.py
+
+sudo apt-get install -y rabbitmq-server
