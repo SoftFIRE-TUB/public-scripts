@@ -38,7 +38,7 @@ js = urllib2.urlopen(req_drule_get).read()
 
 res = json.loads( js )
 
-print res['result']
+# print res['result']
 
 req_drule_update = urllib2.Request(url)
 
@@ -67,3 +67,17 @@ js = urllib2.urlopen(req_drule_create).read()
 res = json.loads( js )
 
 # print res
+
+req_drule_create = urllib2.Request(url)
+
+req_drule_create.add_header('Content-Type', 'application/json-rpc')
+
+# print json.dumps(res['result'][0]['dchecks'])
+
+req_drule_create.add_data('{ "jsonrpc": "2.0", "method": "drule.create", "params": { "name": "surrey network discovery", "delay": "30", "iprange": "10.5.21.1-255", "dchecks": [ { "type": "9", "key_": "system.uname", "ports": "10050", "uniq": "0" } ] }, "auth": "%s", "id": 1 }' % (token))
+
+js = urllib2.urlopen(req_drule_create).read()
+
+res = json.loads( js )
+
+print res
